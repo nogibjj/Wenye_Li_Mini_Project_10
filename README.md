@@ -1,37 +1,49 @@
-[![CI](https://github.com/nogibjj/python-ruff-template/actions/workflows/cicd.yml/badge.svg)](https://github.com/nogibjj/python-ruff-template/actions/workflows/cicd.yml)
-## Template for Python projects with RUFF linter
+[![CI](https://github.com/nogibjj/Wenye_Li_Mini_Project_10/actions/workflows/cicd.yml/badge.svg)](https://github.com/nogibjj/Wenye_Li_Mini_Project_10/actions/workflows/cicd.yml)
+# Wenye Li Mini Project 10
 
-![1 15_rust_built_python_tools](https://github.com/nogibjj/python-ruff-template/assets/58792/db5f7bda-a977-4c67-acbe-a70fe034fbdf)
+## Project Description
+This project utilizes PySpark to process and analyze drug use data. The focus is on extracting insights from age-specific drug usage patterns, performing data transformations, and leveraging Spark SQL for complex queries.
 
+## File Structure
+- `main.py`: Entry point for running the analysis.
+- `mylib/lib.py`: Contains reusable functions for data processing.
+- `test.py`: Unit tests for the functions in `lib.py`.
 
+## Key Features
 
-1. First thing to do on launch is to open a new shell and verify virtualenv is sourced.
+- Data extraction and preprocessing
+- Basic descriptive statistical analysis
+- Grouping and aggregation using Spark SQL
+- Categorization and transformation of data to highlight alcohol risk levels
+- Automated CI/CD pipeline for testing and formatting
 
-Things included are:
+## How to Run
+1. Clone the repository:
+   ```bash
+   git clone <repository_url>
+   cd <repository_name>
+   ```
+2. Install dependencies:
+   ```bash
+   python -m venv venv
+   source venv/bin/activate
+   pip install -r requirements.txt
+   ```
+3. Run the main script:
+   ```bash
+   python main.py
+   ```
+4. Run tests:
+   ```bash
+   pytest
+   ```
 
-* `Makefile`
+## Data Processing Flow
 
-* `Pytest`
-
-* `pandas`
-
-* `Ruff`:  
-
-Run `make lint` which runs `ruff check`.  You can find out more info on [Ruff here](https://github.com/astral-sh/ruff).
-
-* `Dockerfile`
-
-* `GitHub copilot`
-
-* `jupyter` and `ipython` 
-
-* A base set of libraries for devops and web
-
-* `githubactions`
-
-## References
-
-![1 1-function-essence-of-programming](https://github.com/nogibjj/python-ruff-template/assets/58792/f7f33cd3-cff5-4014-98ea-09b6a29c7557)
-
-
-
+- Extract: Download the dataset using the extract() function.
+- Initialize: Start a Spark session with start_spark().
+- Load: Load the dataset into a PySpark DataFrame using load_data().
+- Analyze: Generate descriptive statistics with describe().
+- Query: Use Spark SQL in the query() function to group and aggregate data by age and substance usage.
+- Transform: Apply data transformations with example_transform() to categorize alcohol usage into risk levels.
+- Cleanup: End the Spark session with end_spark().
