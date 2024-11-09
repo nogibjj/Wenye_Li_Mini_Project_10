@@ -40,7 +40,7 @@ def test_load_data(spark):
         extract()
         df = load_data(spark)
         assert df is not None
-        assert df.count() > 0  # Ensure the dataframe has rows
+        assert df.count() > 0
     except Exception as e:
         print(f"Load data error: {e}")
         assert False
@@ -51,7 +51,7 @@ def test_describe(spark):
     try:
         df = load_data(spark)
         result = describe(df)
-        assert result is None  # The describe function logs but does not return a value
+        assert result is None
     except Exception as e:
         print(f"Describe error: {e}")
         assert False
@@ -74,7 +74,7 @@ def test_query(spark):
             """,
             "drug_use",
         )
-        assert result is None  # The query function logs but does not return a value
+        assert result is None
     except Exception as e:
         print(f"Query error: {e}")
         assert False
@@ -85,7 +85,7 @@ def test_example_transform(spark):
     try:
         df = load_data(spark)
         result = example_transform(df)
-        assert result is None  # The transform function logs but does not return a value
+        assert result is None
     except Exception as e:
         print(f"Example transform error: {e}")
         assert False
